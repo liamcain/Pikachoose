@@ -1,0 +1,40 @@
+[
+
+
+{ "keys": ["super+o"], "command": "fuzzy_start_from_file", "args": {"regex_exclude": ["\\.[\\w]+"]}},
+
+{
+  "keys": ["~"], "command": "pikachoose", "args": {"start": "/Users/liam", "regex_exclude": ["\\.[\\w]+"]}, "context":
+    [
+      {
+        "operand": true,
+        "operator": "equal", 
+        "match_all": true, 
+        "key": "at_pikachoose_start"
+      }
+    ]
+  },
+{
+  "keys": ["."], "command": "pikachoose_show_hidden", "context":
+    [
+      {
+        "operand": true,
+        "operator": "equal", 
+        "match_all": true, 
+        "key": "at_pikachoose_start"
+      }
+    ]
+  },
+  {
+    "keys": ["/"], "command": "accept_qp", "context":
+      [
+        {
+          "operand": true,
+          "operator": "equal", 
+          "match_all": true, 
+          "key": "pikachoose_window_showing"
+        }
+      ]
+    }
+
+]
